@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+    <title> Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <body id="myPage">
+</head>
+<body   background="D:\New folder\final\images\bac.jpg">
+    <link rel="stylesheet" href="css\home.css">
+  
+  <!-- Navbar -->
+  <div class="w3-top">
+   <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="Airline1.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button" title="Notifications">Manage Your Trip <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="Flight.html" class="w3-bar-item w3-button">Ticket Booking</a>
+        <a href="login.html" class="w3-bar-item w3-button" onclick="showAlert()">Ticket Cancallation</a>
+        <a href="#" class="w3-bar-item w3-button">Flight Schedule</a>
+        <a href="#" class="w3-bar-item w3-button"> Time Table</a>
+      </div>
+    </div>
+    <a href="special.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Special Offer</a>
+    <a href="About.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button" title="Notifications">Contact<i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="contact.html" class="w3-bar-item w3-button">Contact Details</a>
+      <a href="route.html" class="w3-bar-item w3-button">Route MAp </a>
+      <a href="#" class="w3-bar-item w3-button">Frequently Asked Question</a>
+    </div>
+  </div>
+  <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-button" title="Notifications">Login<i class="fa fa-caret-down"></i></button>     
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Admin</a>
+            <a href="login.html" class="w3-bar-item w3-button">User</a>
+          </div>
+        </div>
+        <a href="register.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Register</a>
+          </div>
+  <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#team" class="w3-bar-item w3-button">Manage Your Trip</a>
+      <a href="special.html" class="w3-bar-item w3-button">Special Offer</a>
+      <a href="About.html" class="w3-bar-item w3-button">About Us</a>
+      <a href="#" class="w3-bar-item w3-button">Search</a>
+    </div>
+  </div><br><br>
+  <marquee><h3><b><i>We Value Your Feedback...!!!</i></b></h3></marquee>
+<div class="row">
+    <br><br>
+
+    <div class="column">
+      <br>
+      <br><br>
+      <p><i class="fa fa-map-marker  " style="font-size:x-large;color:black;">&nbsp;&nbsp; Address</i></p><br>
+        <i class="fa fa-envelope" style="font-size:x-large;color:black">&nbsp;&nbsp;Airline@gmail.com</i><br><br>
+        <i class="fa fa-phone" style="font-size:x-large;color:black">&nbsp;&nbsp; 7489002883</i>
+        </div>
+    
+        <div class="column">
+                
+                <br><br><br>
+                <label for="Name" style="color:black" >Name</label><br>
+                <input type="text"  style="width:300px;height:5%"><br><br><br>
+                <label for="country" style="color:black">Country</label><br>
+                <select id="country" name="country" style="width:300px;height:5% ">
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+                  <option value="canada">India</option>
+                  <option value="canada"></option>
+                </select>
+                <br><br><br>
+                <textarea id="feedback" placeholder="Feedback" style="height:200px;width: 300px;"></textarea><br><br><br>
+           
+               <button type="submit" style="height:8% ;width:25%;background: darkslateblue" ><b style="font-size:larger;align-content: center">submit</b><br><br>
+              
+  
+    </button>
+    
+    </div>
+    </div>
+    <script>
+      function showAlert() {
+        alert ("Please Login Befor Book Ticket");
+      }
+      </script>
+</body>
+</html>

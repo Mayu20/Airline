@@ -1,0 +1,235 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  margin-left: 70%;
+  margin-top: 0%;
+  max-width: 1000px;
+  height: 650px;
+  padding: 10px;
+  background-color: white;
+  transform: translate(-10%,-98%);
+}
+
+/* Full-width input fields */
+  input[type=text], input[type=password],input[type=""] {
+  width: 60%;
+  padding: 15px;
+  margin: 10px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]
+{
+  margin-left:20%;
+}
+input[type=""] 
+{
+  margin-left:7%;
+}
+.lis{
+margin-left:4%;
+}
+.lis1
+{
+margin-left:27%;
+}
+.lis2
+{
+margin-left:10%;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+} 
+fieldset{
+  background: white;
+  top:2%;
+  position :absolute;
+  width:500px;
+}
+.mySlides {display:none;
+  position:relative;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(185, 182, 182);
+  border-color:black;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color:rgb(87, 84, 84);
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  top:220%;
+  border-radius: 3px 0 0 3px;
+}
+.prev{
+  top:220%;
+  right:97%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/*image container */
+.column {
+  float: left;
+  width: 48.33%;
+  padding:8px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.show
+{
+  position:relative;
+  bottom:100px;
+  z-index:1;
+}
+.Label
+{
+  margin-left:3%;
+}
+.sl
+{
+margin-left:11%;
+}
+.fieldset1
+{
+  width:500;height:450;
+  color:black; 
+  background:rgba(196, 228, 238, 0.6);
+  margin-left:35%;
+  margin-top: 8%;
+  border: 2px white;
+}
+.fieldset2
+{
+  background: rgba(196, 228, 238, 0.6);
+  width:650px;
+  height:450px;
+  margin-left:30%;
+  margin-top:5%;
+  color: black;
+}
+.fieldset3
+{
+  width:800;
+  height:570;
+  color:black;
+  background:rgba(196, 228, 238, 0.6);
+   margin-left:25%;
+   border:2px solid round border;
+   border-color:black;
+  margin-top: 5%;
+}
+legend
+{
+  font-size:x-large;
+  color:black
+}
+.f{
+  font-size:x-large
+}
+.l1
+{
+
+  margin-left:60%;
+  margin-top:0%;
+}
+.l2
+
+{
+  font-size:x-large;
+  margin-left:15%;
+}
+.l3
+{
+  margin-left:8%;
+  font-size:large;
+}
+.a1
+{
+  margin-left:20%;
+  color:rgb(7, 9, 133);
+}
+.b1
+{
+  background-color:darkgoldenrod;
+  width:190;
+  height:50;
+  border: 2px solid darkgoldenrod;
+}
+.b2
+{
+  background: rgb(83, 122, 231);
+  color:white;
+ 
+}
+.b3
+{
+  background-color:rgb(47, 185, 240);
+  width:40%;
+  height:20%;
+  border: 2px solid rgb(48, 177, 228)
+}
+.img1
+{
+  float:right;
+}
+.img2
+{
+  width:100%;
+  height:400px;
+}

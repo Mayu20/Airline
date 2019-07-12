@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <title>Registration</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="css\register.css">
+ 
+
+<body style="background: rgba(248, 218, 221, 0.89)">
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="Airline1.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Manage Your Trip <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="Flight.html" class="w3-bar-item w3-button">Ticket Booking</a>
+          <a href="#" class="w3-bar-item w3-button">Ticket Cancallation</a>
+          <a href="#" class="w3-bar-item w3-button">Flight Schedule</a>
+          <a href="#" class="w3-bar-item w3-button"> Time Table</a>
+        </div>
+      </div>
+      <a href="special.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Special Offer</a>
+      <a href="About.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Contact<i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="contact.html" class="w3-bar-item w3-button">Contact Details</a>
+          <a href="route.html" class="w3-bar-item w3-button">Route MAp </a>
+          <a href="#" class="w3-bar-item w3-button">Frequently Asked Question</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Login<i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button">Admin</a>
+          <a href="login.html" class="w3-bar-item w3-button">User</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+      <a href=".html" class="w3-bar-item w3-button">Manage Your Trip</a>
+      <a href="special.html" class="w3-bar-item w3-button">Special Offer</a>
+      <a href="About.html" class="w3-bar-item w3-button">About Us</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+      <a href="Login.html" class="w3-bar-item w3-button">Login</a>
+    </div>
+  </div>
+  <br<br>
+    <!--registration form-->
+  
+    <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="mabout">
+        <div class="login-form">
+            <form action="/examples/actions/confirmation.php" method="post">
+                <h2 style="color: black;" class="text-center">Sign Up</h2>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user">&nbsp;</i></span>
+                        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" class="form-control" name="email" placeholder="Email-id" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-mobile">&nbsp;&nbsp;</i></span>
+                        <input type="number" id="phone_number" class="form-control" name="phone" placeholder="Mobile No." required="required" value="555 123 4567" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
+                        <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
+                        <input type="password" class="form-control" name="password1" placeholder="Confirm Password" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block login-btn">Register</button>
+                </div>
+
+
+            </form>
+            <div class="hint-text small">Have Already an account? <a href="login.html" class="text-success">Login Here!</a></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
