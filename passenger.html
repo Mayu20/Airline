@@ -6,10 +6,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css\st.css">
 
-<body style="background:rgba(248, 218, 221, 0.89)">
-  <br>
-  <link rel="stylesheet" href="st.css">
+
+<body background=" images\bs.jpg">
+
+  <!--navigation bar-->
   <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
@@ -46,53 +48,53 @@
       <a href="#" class="w3-bar-item w3-button">Search</a>
     </div>
   </div><br><br>
-  <fieldset
-    style="width:300;height:550;color:black; background: rgba(128, 126, 126, 0.6);top:40%;margin-left:20%;margin-right:20%;border:none;margin-top: 3% ">
-    <legend style="color:white;font-size:x-large">Personal Details</legend>
-    <label for="Tilte" style="color:black"><b>Title</b></label>
+  <!--personal details-->
+  <fieldset class="fieldset3">
+    <legend class="h"><b>Personal Details</b></legend><br>
+    <label for="Title"><b>Title</b></label>&nbsp;&nbsp;&nbsp;
     <select>
       <option value="MR.">MR.</option>
       <option value="MS">MS</option>
     </select><br><br>
-    <label for="First Name" style="color:black"><b>First Name *</b></label>
-    <label for="Last Name" style="margin-left: 29% " style="color:black"><b>Last Name *</b></label><br>
+    <label for="First Name"><b>First Name *</b></label>&nbsp;&nbsp;
     <input type="text" placeholder="First Name" required>
-    <input type="text" placeholder="Last Name" style="margin-left: 18%" required>
+    <label for="Last Name" class="l1"><b>Last Name *</b></label>
+    <input type="text" placeholder="Last Name" required>
     <br><br>
-    <label for="Passport No." style="color:black"><b>Passport No. *</b></label>
-    <label for="Country" style="margin-left: 28%" style="color:white"><b>Country *</b></label><br>
+    <label for="Passport No."><b>Passport No.*</b></label>
     <input type="text" placeholder="Passport No." required>
-    <input type="text" placeholder="Country. " style="margin-left: 18%" required>
+    <label for="Country" class="l1"><b>Country *</b></label>
+    <input type="text" placeholder="Country" class="l2" required>
     <br><br>
-    <label for="Address 1" style="color:black"><b>Address 1 *</b></label>
-    <label for="Address 2" style="margin-left: 29%" style="color:black"><b>Address 2</b></label><br>
+    <label for="Address 1"><b>Address 1 *&nbsp;&nbsp;&nbsp;</b></label>
     <input type="text" placeholder="Address 1" required>
-    <input type="text" placeholder="Address 2" style="margin-left:18%">
+    <label for="Address 2" class="l1"><b>Address 2</b></label>
+    <input type="text" placeholder="Address 2" class="l2">
     <br><br>
-    <label for="Visa No" style="color:black"><b>Visa No</b></label>
-    <label for="contact" style="margin-left: 33%" style="color:black"><b>Contact *</b></label><br>
-    <input type="text" placeholder="Visa No">
-    <input type="text" placeholder="Contact" style="margin-left: 18%" required>
+    <label for="Visa No"><b>Visa No</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="Visa No" class="l2">&nbsp;
+    <label for="contact" class="l1"><b>Contact *</b></label>
+    <input type="text" placeholder="Contact" class="l2" required>
     <br><br>
-    <label for="Email" style="color:black"><b>Email *</b></label>
-    <label for="PIN" style="margin-left: 33%" style="color:black"><b>PIN *</b></label><br>
-    <input type="text" placeholder="Email" required>
-    <input type="text" placeholder="PIN" style="margin-left: 18% ">
+    <label for="Email"><b>Email *</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="Email" class="l2" required>&nbsp;&nbsp;
+    <label for="PIN" class="l1"><b>PIN *</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="PIN" class="l2">
     <br><br>
-    <label for="meal preference" style="color:black"><b>meal preference </b></label>
-    <label for="special Assistance" style="color:black;margin-left:25%"><b>Special Assistance </b></label><br>
+    <label for="meal preference"><b>meal preference </b></label>
+    <input type="text" placeholder="meal preference">
+
+    <label for="special Assistance"><b>Special Assistance </b></label>
     <select>
       <option></option>
       <option value="Visually Impaired">Visually impaired</option>
       <option value="saab">Wheelchair User</option>
 
-    </select><br>
-
-    <input type="text" placeholder="meal preference" style="margin-left: 40% "><br>
-    <input type="checkbox"> I agree<br><br>
-    <button type="reset" style="background:coral;margin-left:4%;width:20%;height:35px"><b>Cancel</button></b>&nbsp;
-    <button type="submit" onclick="window.location.href='payment.html'"
-      style="background: coral ;margin-left:5%;width:20%;height:35px"><b>Make Payment </b></button>
+    </select>
+    <br><br>
+    <input type="checkbox"> <b>I agree</b><br><br>
+    <button type="reset" class="b5"><b>Cancel</button></b>&nbsp;
+    <button type="submit" onclick="window.location.href='payment.html'" class="b5"><b>Make Payment </b></button>
 
   </fieldset>
 </body>

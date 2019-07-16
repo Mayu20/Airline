@@ -10,14 +10,14 @@
   margin-left: 70%;
   margin-top: 0%;
   max-width: 1000px;
-  height: 650px;
+  height: 600px;
   padding: 10px;
   background-color: white;
-  transform: translate(-10%,-98%);
+  transform: translate(-10%,-105%);
 }
 
 /* Full-width input fields */
-  input[type=text], input[type=password],input[type=""] {
+  input[type=text], input[type=password],input[type=start],input[type=end],input[type=search] {
   width: 60%;
   padding: 15px;
   margin: 10px 0 22px 0;
@@ -91,9 +91,9 @@ fieldset{
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 30%;
   width: auto;
-  margin-top: -22px;
+  margin-top: -20px;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -106,14 +106,19 @@ fieldset{
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  top:220%;
+  top:210%;
   border-radius: 3px 0 0 3px;
 }
 .prev{
-  top:220%;
+  top:210%;
   right:97%;
 }
-
+.v1
+{
+  margin-left:85%;
+  font-size:x-large;
+  color:blue;
+}
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
@@ -156,10 +161,10 @@ margin-left:11%;
 }
 .fieldset2
 {
-  background: rgba(196, 228, 238, 0.6);
-  width:650px;
-  height:450px;
-  margin-left:30%;
+  background:rgba(196, 228, 238, 0.6);
+  width:750px;
+  height:400px;
+  margin-left:45%;
   margin-top:5%;
   color: black;
 }
@@ -168,7 +173,7 @@ margin-left:11%;
   width:800;
   height:570;
   color:black;
-  background:rgba(196, 228, 238, 0.6);
+  background:rgb(167, 172, 202);
    margin-left:25%;
    border:2px solid round border;
    border-color:black;
@@ -232,4 +237,44 @@ legend
 {
   width:100%;
   height:400px;
+}
+.h
+{
+  margin-left:35%;
+  color:black;
+}
+.p
+{
+  color:black;
+}
+.p1
+{
+  margin-left:20%;
+  color:black;
+}
+.p2
+{
+  margin-left:25%;
+  color:black;
+}
+/*search filter*/
+  
+#fieldlist li .k-widget:not(.k-tooltip),
+#fieldlist li .k-textbox {
+    margin: 0 5px 5px 0;
+}
+span.k-widget.k-tooltip-validation {
+  display: inline-block;
+  width: 160px;
+  text-align: left;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  color: red;
+}
+
+.k-tooltip-validation .k-warning {
+  display: none;
 }

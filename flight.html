@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascript\home.js"></script>
-<link rel="stylesheet" href="css\home.css">
+<link rel="stylesheet" href="css\st.css">
 
-<body style=" background:  rgba(248, 218, 221, 0.89);">
+<body background="images\bs.jpg">
 
   <!-- Navbar -->
   <div class="w3-top">
@@ -39,27 +39,28 @@
       <a href="contact.html" class="w3-bar-item w3-button">My Booking</a>
       <a href="Airline1.html" class="w3-bar-item w3-button">Logout</a>
     </div>
-  </div><br><br>
-  <fieldset class="fieldset3">
-    <legend><b>Ticket Booking</b></legend>
-    <br><br>
-
-    <input type="radio" name="route" value="1"  checked>One Way&nbsp;&nbsp;&nbsp;
+  </div><br>
+  <!--flight book form-->
+  <label for="flight">
+    <h1><b><i>Book Ticket</i></b></h1>
+  </label>
+  <fieldset class="fieldset2">
+    <input type="radio" name="route" value="1" checked>One Way&nbsp;&nbsp;&nbsp;
     <input type="radio" name="route" value="2">Round Trip<br><br>
     <label for="From"><b>From</b> </label>
-    <input type="text" placeholder="from" name="from" required><br>
+    <input type="text" placeholder="from" name="from" class="l1" required><br><br>
     <label for="psw"><b>To</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" placeholder="To" name="psw" required><br>
-    <label for="psw"><b>Dept Date</b></label>&nbsp;&nbsp;
-    <input type="" placeholder="Departure Dtae" name="psw" required><br>
-    <label for="psw"><b>Return Date</b></label>
-    <input type="" placeholder="Return Date" name="psw" required><br>
-    <label for="psw"><b>Travellers</b></label>
+    <input type="text" placeholder="To" name="psw" class="l1" required><br><br>
+    <label for="psw"><b>Dept Date</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="" placeholder="Departure Dtae" name="psw" required><br><br>
+    <label for="psw"><b>Return Date</b></label>&nbsp;&nbsp;
+    <input type="" placeholder="Return Date" name="psw" required><br><br>
+    <label for="psw"><b>Travellers</b></label>&nbsp;&nbsp;
     <label for="psw" class="lis">Adult</label>
 
     <label class="lis">child(2-11)</label>
 
-    <label class="lis">child(below 2)</label>
+    <label class="lis">child(below 2)</label><br>
 
     <select id="myList" class="lis1">
       <option value="1">0&nbsp;</option>
@@ -67,14 +68,14 @@
       <option value="3">2&nbsp;</option>
       <option value="4">3&nbsp;</option>
     </select>
-    &nbsp;&nbsp;&nbsp;
+
     <select id="myList" class="lis2">
       <option value="1">0&nbsp;</option>
       <option value="2">1&nbsp;</option>
       <option value="3">2&nbsp;</option>
       <option value="4">3&nbsp;</option>
     </select>
-    &nbsp;&nbsp;&nbsp;
+
     <select id="myList" class="lis2">
       <option value="1">0&nbsp;</option>
       <option value="2">1&nbsp;</option>
@@ -88,10 +89,9 @@
       <option value="3">First class</option>
     </select><br><br>
     </form>
-<br>
-    <center><button class="b3  w3-button w3-round-xxlarge" type="submit"
-        onclick="window.location.href='passenger.html'"><b style="font-size: larger">Search Flight</b></button></center>
     <br>
+    <center><button class=" w3-button w3-round-xxlarge w3-blue" type="submit"
+        onclick="window.location.href='passenger.html'"><b>Search Flight</b></button></center>
   </fieldset>
 
 </body>

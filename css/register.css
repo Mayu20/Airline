@@ -26,7 +26,7 @@
   .form-control,
   .btn {
     min-height: 40px;
-    border-radius: 2px;
+  
   }
   
   .login-btn {
@@ -85,9 +85,52 @@
   }
   .login-btn
   {
-      background: rgb(3, 3, 71);
+      background: rgb(32, 32, 109);
+     
   }
   .p
 {
-    color:royalblue
+    color:royalblue;
+    font:large;
+}
+.p1
+{
+  color:black;
+  font:large;
+}
+.p3
+{
+  font-size:x-large;
+  color:black;
+}
+.p4
+{
+  font-size:larger;
+  color:black;
+}
+.ps
+{
+  color:black;
+  font:large;
+
+  margin-top:1%;
+}
+.s4
+{
+  color:black;
+  font:large;
+  height:200px;
+  width: 300px;
+}
+.column {
+  float: left;
+  width: 48.33%;
+  padding:8px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }

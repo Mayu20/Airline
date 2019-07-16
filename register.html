@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-  <link rel="stylesheet" href="css\register.css">
- 
 
-<body style="background: rgba(248, 218, 221, 0.89)">
+  <link rel="stylesheet" href="css\register.css">
+  <script src="javascript\home.js"></script>
+
+<body background="images\bs.jpg">
 
   <!-- Navbar -->
   <div class="w3-top">
@@ -61,50 +61,54 @@
   </div>
   <br<br>
     <!--registration form-->
-  
-    <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="mabout">
-        <div class="login-form">
-            <form action="/examples/actions/confirmation.php" method="post">
-                <h2 style="color: black;" class="text-center">Sign Up</h2>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user">&nbsp;</i></span>
-                        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" placeholder="Email-id" required="required">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-mobile">&nbsp;&nbsp;</i></span>
-                        <input type="number" id="phone_number" class="form-control" name="phone" placeholder="Mobile No." required="required" value="555 123 4567" />
+    <br><Br>
+    <div class="" id="mabout">
+      <div class="login-form">
+        <form action="register.php" method="post">
+          <h2 style="color: black;" class="text-center">Sign Up</h2>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user">&nbsp;</i></span>
+              <input type="text" class="form-control" name="username" placeholder="Name" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <input type="email" class="form-control" name="email" placeholder="Email-id" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-mobile">&nbsp;&nbsp;</i></span>
+              <input type="number" id="phone_number" class="form-control" name="phone" placeholder="Mobile No."
+                required="required" value="555 123 4567" />
 
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
-                        <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
-                        <input type="password" class="form-control" name="password1" placeholder="Confirm Password" required="required">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-block login-btn">Register</button>
-                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
+              <input type="password" class="form-control" name="password" placeholder="Enter Password"
+                required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock">&nbsp;&nbsp;</i></span>
+              <input type="password" class="form-control" name="password1" placeholder="Confirm Password"
+                required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block login-btn" name="register">Register</button>
+          </div>
 
 
-            </form>
-            <div class="hint-text small">Have Already an account? <a href="login.html" class="text-success">Login Here!</a></div>
-        </div>
+        </form>
+        <div class=" p hint-text small">Have Already an account? <a href="login.html" class="p1 text-success">Login
+            Here!</a></div>
+      </div>
     </div>
 
 </body>

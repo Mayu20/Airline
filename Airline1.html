@@ -3,11 +3,19 @@
 <title>Airline Reservation</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet " href="css\home.css">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.min.css" />
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
+
+<script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
+<script src="javascript\home.js"></script>
 
 <head>
 
@@ -62,7 +70,7 @@
   <!-- Automatic Slideshow Images -->
   <div class=" w3-center">
 
-    <img src="D:\ck.jpg" style="width:100%">
+    <img src="images\ck.jpg" style="width:100%">
   </div>
   <!-- flight search form-->
 
@@ -70,22 +78,185 @@
     <h1><b>Book a Flight</b></h1>
     <input type="radio" name="route" value="1" checked>One Way&nbsp;&nbsp;&nbsp;
     <input type="radio" name="route" value="2">Round Trip<br><br>
-    <label for="From"><b>From</b> </label>
-    <input type="text" placeholder="from" name="from" required><br>
-    <label for="psw"><b>To</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" placeholder="To" name="psw" required><br>
-    <label for="psw"><b>Dept Date</b></label>&nbsp;&nbsp;
-    <input type="" placeholder="Departure Dtae" name="psw" required><br>
-    <label for="psw"><b>Return Date</b></label>
-    <input type="" placeholder="Return Date" name="psw" required><br>
+    <div id="example">
+      <div class="demo-section k-content">
+        <label for="search" class="required"><b>From</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="search" id="search" name="search" required validationMessage="Select movie"
+          style="width: 220px;" /><span class="k-invalid-msg" data-for="search"></span>
+        <br></div>
+    </div>
+
+    <!--script for filter-->
+    <script>
+      $(document).ready(function () {
+        var data = [
+          "Mumbai,india",
+          "Delhi,india",
+          "Bengluru,india",
+          "Kolkata,india",
+          "Hydrabad,india",
+          "Singapore,Singapore",
+          "Ahemdabad,india"
+        ];
+
+        $("#search").kendoAutoComplete({
+          dataSource: data,
+          separator: ", "
+        });
+
+
+        var validator = $("#ticketsForm").kendoValidator().data("kendoValidator"),
+          status = $(".status");
+
+        $("form").submit(function (event) {
+          event.preventDefault();
+          if (validator.validate()) {
+            status.text("Hooray! Your tickets has been booked!")
+              .removeClass("invalid")
+              .addClass("valid");
+          } else {
+            status.text("Oops! There is invalid data in the form.")
+              .removeClass("valid")
+              .addClass("invalid");
+          }
+        });
+      });
+    </script>
+    </div>
+    <br>
+    <div id="example">
+      <div class="demo-section k-content">
+        <label for="psw"><b>To</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="countries" placeholder="To" name="psw" required><br>
+
+
+      </div>
+
+      <script>
+        $(document).ready(function () {
+          var data = [
+            "Agartala, India",
+            "Amritsar, India",
+            "Athens, grece",
+            "Ahmedabad, India",
+            "Bengluru India",
+            "Bhopal,India",
+            "Bhubneshwar,India",
+            "Brussels,India",
+            "Belgium",
+            "Chennai,India",
+            "Chandigarh,India",
+            "Coimbatore,India",
+            "Colombo,Sri Lanka",
+            "Dehradun,India",
+            "D,India",
+            "Dubai,UAE",
+            "Goa ,India",
+            "Hong Kong,Homg Kong",
+            "Hydrabad,Hydrabad",
+            "Indore,India",
+            "Istabul,Turkey",
+            "Jammu,India",
+            "Jaipur,India",
+            "Kolkata,India",
+            "Kuwait,India",
+            "Kochi,India"
+          ];
+
+          //create AutoComplete UI component
+          $("#countries").kendoAutoComplete({
+            dataSource: data,
+            filter: "startswith",
+            placeholder: "Select Destination...",
+            separator: ", "
+          });
+        });
+      </script>
+    </div>
+
+    <br>
+
+    <div id="example">
+
+      <div class="demo-section k-content">
+
+        <label for="text"><b>Dept Date</b></label>&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;<input id="start" value="10/10/2011" onclick="show1(); " />
+        <br><br>
+      
+        <label for="text"><b>return Date</b></label>&nbsp;&nbsp;
+        &nbsp;&nbsp;<input id="end" value="10/10/2012" onclick="show2();" />
+
+      </div>
+      <script>
+      function show2(){
+  document.getElementById('end').style.display ='none';
+}
+function show1(){
+  document.getElementById('end').style.display = 'block';
+}</script>
+      <script>
+        $(document).ready(function () {
+          function startChange() {
+            var startDate = start.value(),
+              endDate = end.value();
+
+            if (startDate) {
+              startDate = new Date(startDate);
+              startDate.setDate(startDate.getDate());
+              end.min(startDate);
+            } else if (endDate) {
+              start.max(new Date(endDate));
+            } else {
+              endDate = new Date();
+              start.max(endDate);
+              end.min(endDate);
+            }
+          }
+
+          function endChange() {
+            var endDate = end.value(),
+              startDate = start.value();
+
+            if (endDate) {
+              endDate = new Date(endDate);
+              endDate.setDate(endDate.getDate());
+              start.max(endDate);
+            } else if (startDate) {
+              end.min(new Date(startDate));
+            } else {
+              endDate = new Date();
+              start.max(endDate);
+              end.min(endDate);
+            }
+          }
+
+          var start = $("#start").kendoDatePicker({
+            change: startChange
+          }).data("kendoDatePicker");
+
+          var end = $("#end").kendoDatePicker({
+            change: endChange
+          }).data("kendoDatePicker");
+
+          start.max(end.value());
+          end.min(start.value());
+        });
+      </script>
+
+    </div>
+
+    <br>
+
+
     <label for="psw"><b>Travellers</b></label>
-     <label for="psw" class="lis">Adult</label>
-  
+    <label for="psw" class="lis">Adult</label>
+
     <label class="lis">child(2-11)</label>
-  
+
     <label class="lis">child(below 2)</label>
-   
-    <select id="myList" class="lis1" >
+
+    <select id="myList" class="lis1">
       <option value="1">0&nbsp;</option>
       <option value="2">1&nbsp;</option>
       <option value="3">2&nbsp;</option>
@@ -110,7 +281,7 @@
       <option value="1">Economy</option>
       <option value="2">Business</option>
       <option value="3">First class</option>
-    </select><br><br>
+    </select><br>
     <button type="submit" class="btn">Search Flight</button>
   </form>
 
@@ -118,85 +289,87 @@
 
   <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
-    <label for="offer" style="font-size:x-large">Offer</label><br>
+    <label for="offer" style="font-size:xx-large">Offer<a href="special.html" class="v1">View all</a></label>
     <div class="w3-quarter">
       <div class="w3-card w3-white">
-        <img src="D:\ho.jpg" alt="Snow" style="width:100%">
+        <img src="images\ho.jpg" alt="Snow" style="width:100%">
 
       </div>
     </div>
 
     <div class="w3-quarter">
       <div class="w3-card w3-white">
-        <img src="D:\ia.png" alt="Lights" style="width:100%">
+        <img src="images\ia.png" alt="Lights" style="width:100%">
 
       </div>
     </div>
     <div class="w3-quarter">
       <div class="w3-card w3-white">
-        <img src="D:\re.png" alt="Lights" style="width:67%">
+        <img src="images\re.png" alt="Lights" style="width:67%">
 
       </div>
     </div>
 
     <div class="w3-quarter">
       <div class="w3-card w3-white">
-        <img src="D:\sa1.jpg" alt="Mountains" style="width:100%">
+        <img src="images\sa1.jpg" alt="Mountains" style="width:100%">
       </div>
     </div>
   </div>
+
   <!--work row for Popular destination-->
 
 
   <div class="w3-row-padding w3-padding-64 #f9e6ba w3-theme-l3" id="work">
 
 
-    <h2 class="w3-center">Popular Destination</h2>
+    <h2 class="w3-center">Popular Destination<a href="destination.html" class="w3-right" style="color:blue">view all</a>
+    </h2>
 
     <div class=" mySlides w3-card w3-white">
-     
-        <img src="D:\gold.png" class="img2">
-        <h1>Amritsar</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\bangk.jpg" class="img2">
-        <h1>Bangkok</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\duba.jpg" class="img2">
-        <h1>Dubai</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\Mum.jpg" class="img2">
-        <h1>Mumbai</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\goy.jpg" class="img2">
-        <h1>Goa</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\New folder\final\images\a.jpg"  class="img2">
-        <h1>Agra</h1>
-      </div>
-      <div class=" mySlides w3-card w3-white">
-        <img src="D:\New folder\final\images\lon.jpg"  class="img2" >
-        <h1>London</h1>
-      </div>
 
-      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-      <button class="next" onclick="plusSlides(1)">&#10095;</button>
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-        <span class="dot" onclick="currentSlide(7)"></span>
-        <script src="javascript\home.js"></script>
-
-      </div>
+      <img src="images\Amritsar.jpg" class="img2">
+      <h1>Amritsar</h1>
     </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\bangk.jpg" class="img2">
+      <h1>Bangkok</h1>
+    </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\duba.jpg" class="img2">
+      <h1>Dubai</h1>
+    </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\Mum.jpg" class="img2">
+      <h1>Mumbai</h1>
+    </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\goy.jpg" class="img2">
+      <h1>Goa</h1>
+    </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\a.jpg" class="img2">
+      <h1>Agra</h1>
+    </div>
+    <div class=" mySlides w3-card w3-white">
+      <img src="images\lon.jpg" class="img2">
+      <h1>London</h1>
+    </div>
+
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <script src="javascript\home.js"></script>
+
+    </div>
+  </div>
 
   <section class="ftco-section ftco-wrap-about ftco-no-pb w3-theme-l2">
 
@@ -218,7 +391,7 @@
           The airline was founded by J. R. D. Tata as Tata Airlines in 1932;</p>
       </div>
       <div class="column">
-        <img src="D:\air.jpg" class="img1">
+        <img src="images\air.jpg" class="img1">
       </div>
     </div>
   </section>
