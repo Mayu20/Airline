@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.material.mobile.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
+</head>
+
+<link rel="stylesheet " href="css\register.css">
+
+<body background="images\As.png">
+    <div class="w3-topnav">
+        <div class="w3-bar w3-theme-d2 w3-left-align">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+            <a href="Airline1.php" class="w3-bar-item w3-button w3-teal"><i
+                    class="fa fa-home w3-margin-right"></i>Home</a>
+            <a href="AddAdmin.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Add Admin</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button" title="Notifications">Manage Flight<i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="home.html" class="w3-bar-item w3-button">Add Flight</a>
+                    <a href="flightre.php" class="w3-bar-item w3-button">Delete Flight </a>
+                    <a href="flightre.php" class="w3-bar-item w3-button">Update Flight</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button" title="Notifications">Report<i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="flightre.php" class="w3-bar-item w3-button">Airline Report</a>
+                    <a href=".html" class="w3-bar-item w3-button">Customer Report </a>
+
+                </div>
+            </div>
+            <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">My Profile</a>
+            <a href="Airline1.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+        </div>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+            <a href="#team" class="w3-bar-item w3-button">Home</a>
+            <a href="#w" class="w3-bar-item w3-button">Add Admin</a>
+            <a href="About.html" class="w3-bar-item w3-button">Add Flight</a>
+            <a href=".html" class="w3-bar-item w3-button">Delete Flight</a>
+        </div>
+    </div>
+
+
+    <!-- form Add flight-->
+    <label for="flight">
+        <h1><b><i>ADD Flight</i></b></h1>
+    </label>
+    <fieldset class="fieldset1">
+        <form method="POST" action="flight.php">
+                
+            <label for="From" class="la1"><b>Flight Name</b></label>
+            <input type="text" placeholder="Enter Flight Name" name="fname" class="la1" required> <br>
+            <label for="psw" class="la1"><b>Flight No &nbsp;</b> </label>
+            <input type="text" placeholder="  Enter Flight No" name="fno" class="la1" required><br>
+            <label for="From" class="la1"><b>From City</b></label>
+            <input type="text" placeholder="Enter City Name" name="froml" class="la1" required><br>
+            <label for="psw" class="la1"><b>To City&nbsp;&nbsp;&nbsp;</b></label> 
+            <input type="text" placeholder="  Enter City No" name="tol" class="la1" required><br><br>
+            <label for="psw" class="la1" ><b >Dept Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <input id="start" name="dept" />
+            <br><br>
+            <label for="psw" class="la1" ><b>Return Time</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <input id="end"  name="returnf"/>
+
+            <script>
+                $(document).ready(function () {
+                    function startChange() {
+                        var startDate = start.value(),
+                            endDate = end.value();
+
+                        if (startDate) {
+                            startDate = new Date(startDate);
+                            startDate.setDate(startDate.getDate());
+                            end.min(startDate);
+                        } else if (endDate) {
+                            start.max(new Date(endDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }
+                    }
+
+                    function endChange() {
+                        var endDate = end.value(),
+                            startDate = start.value();
+
+                        if (endDate) {
+                            endDate = new Date(endDate);
+                            endDate.setDate(endDate.getDate());
+                            start.max(endDate);
+                        } else if (startDate) {
+                            end.min(new Date(startDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }
+                    }
+
+                    var today = kendo.date.today();
+
+                    var start = $("#start").kendoDateTimePicker({
+                        value: today,
+                        change: startChange,
+                        parseFormats: ["dd/MM/yyyy"]
+                    }).data("kendoDateTimePicker");
+
+                    var end = $("#end").kendoDateTimePicker({
+                        value: today,
+                        change: endChange,
+                        parseFormats: ["dd/MM/yyyy"]
+                    }).data("kendoDateTimePicker");
+
+                    start.max(end.value());
+                    end.min(start.value());
+                });
+            </script>
+
+            </div>
+
+
+
+            <br>
+            <center><button class=" w3-button w3-round-xxlarge w3-blue" type="submit" name="add"><b>ADD
+                        Flight</b></button></center>
+
+        </form>
+    </fieldset>
+</body>
+
+</html>

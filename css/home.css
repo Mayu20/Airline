@@ -13,7 +13,7 @@
   height: 600px;
   padding: 10px;
   background-color: white;
-  transform: translate(-10%,-105%);
+  transform: translate(-230%,-105%);
 }
 
 /* Full-width input fields */
@@ -193,6 +193,7 @@ legend
   margin-left:60%;
   margin-top:0%;
 }
+
 .l2
 
 {
@@ -232,6 +233,7 @@ legend
 .img1
 {
   float:right;
+  width:95%;
 }
 .img2
 {
@@ -277,4 +279,37 @@ span.k-widget.k-tooltip-validation {
 
 .k-tooltip-validation .k-warning {
   display: none;
+}
+/*css for magic scroll*/
+
+.preview {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+.preview { width: 70%; float: left; }
+@media (min-width: 0px) {
+  .preview { width: 100%; float: none; }
+}
+@media (min-width: 1024px) {
+  .preview { width: calc(100% - 340px); }
+  
+}
+@media screen and (max-width: 1023px) {
+  .app-figure { width: 98% !important; margin: 50px 0; padding: 0; }
+  .app-code-sample { display: none; }
+ 
+}
+@media screen and (max-width: 600px) {
+  .api-controls button, .api-controls button:active, .api-controls button:focus {
+      width: 70px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .api-controls .sep { content: ''; display: table; }
+}
+@media screen and (min-width: 1600px) {
+  .preview { padding: 10px 160px; }
 }

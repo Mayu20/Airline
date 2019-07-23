@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <title>Airline Reservation</title>
@@ -30,7 +32,7 @@
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
         href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="Airline1.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      <a href="Airline1.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
       <div class="w3-dropdown-hover w3-hide-small">
         <button class="w3-button" title="Notifications">Manage Your Trip <i class="fa fa-caret-down"></i></button>
         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -75,7 +77,8 @@
   </div>
   <!-- flight search form-->
 
-  <form action="schedule.php" method="POST" class="container">
+  <form action="flightre1.php" method="POST" class="container">
+    
     <h1><b>Book a Flight</b></h1>
     <input type="radio" id="chkNo" name="chkPassPort" onclick="ShowHideDiv()" />One Way&nbsp;&nbsp;&nbsp;
     <input type="radio" id="chkYes" name="chkPassPort" onclick="ShowHideDiv()" />Round Trip<br><br>
@@ -87,7 +90,6 @@
           style="width: 220px;" /><span class="k-invalid-msg" data-for="search"></span>
         <br></div>
     </div>
-
     <!--script for filter-->
     <script>
       $(document).ready(function () {
@@ -107,28 +109,14 @@
         });
 
 
-        var validator = $("#ticketsForm").kendoValidator().data("kendoValidator"),
-          status = $(".status");
-
-        $("form").submit(function (event) {
-          event.preventDefault();
-          if (validator.validate()) {
-            status.text("Hooray! Your tickets has been booked!")
-              .removeClass("invalid")
-              .addClass("valid");
-          } else {
-            status.text("Oops! There is invalid data in the form.")
-              .removeClass("valid")
-              .addClass("invalid");
-          }
         });
-      });
+      
     </script>
     </div>
     <br>
     <div id="example">
       <div class="demo-section k-content">
-        <label for="psw"><b>To&nbsp;&nbsp;&nbsp;</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="psw"><b>To&nbsp;&nbsp;&nbsp;</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="countries" placeholder="To" name="to" required><br>
 
 
@@ -182,7 +170,7 @@
 
       <div class="demo-section k-content">
 
-        <label for="text"><b>Dept Date</b></label>&nbsp;
+        <label for="text"><b>Dept Date</b></label>
         <input id="start" name="dept" value="10/10/2011" />
         <br><br>
 
@@ -198,8 +186,7 @@
       </script>
 
       <div id="dvPassport" style="display: none"><b>
-          return Date:</b>
-        <input type="text" id="end" name=return />
+          RetDate:</b> <input type="text" id="end" name=return />
       </div>
 
 
@@ -270,13 +257,13 @@
 
 
     <br>
-    <label for="psw"><b>class</b></label>&nbsp;&nbsp;
+    <label for="class"><b>class</b></label>
     <input type="text" name="class">
 
-    <label for="psw"><b>Passenger</b></label>
+    <label for="psw"><b>Passenger&nbsp;&nbsp;</b></label>
     <input type="number" name="passenger">
-
-
+<br><br>
+      
 
     <button type="submit" class="btn" name="search">Search Flight</button>
   </form>

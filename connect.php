@@ -23,6 +23,7 @@ if (isset($_POST['login'])) {
            // echo '<p class="success">Congratulations, you are logged in!</p>';
            header("location:user.html"); 
         } else {
+            
             echo '<p class="error">Username password combination is wrong!</p>';
         }
     }

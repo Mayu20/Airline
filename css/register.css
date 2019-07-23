@@ -127,10 +127,35 @@
   width: 48.33%;
   padding:8px;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  
+}
 
 /* Clear floats after image containers */
 .row::after {
   content: "";
   clear: both;
   display: table;
+}
+.la1
+{
+margin-left:10%;
+margin-top:5%;
+
+}
+.fieldset1
+{
+  width:50%;
+  height:200;
+  color:black; 
+  background:transparent;
+  margin-left:10%;
+
+  border: 2px white;
+}
+.la1{
+  margin-left:10%;
 }
