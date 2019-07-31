@@ -71,34 +71,49 @@ $conn = mysqli_connect($servername, $username, $password, "$dbname");
 if (!$conn) {
   die('Could not Connect My Sql:' . mysql_error());
 }
-if (isset($_POST['add'])) {
+if (isset($_POST['report'])) {
   $fname = $_POST['fname'];
   $fno = $_POST['fno'];
-  $froml = $_POST['froml'];
-  $tol = $_POST['tol'];
-  $dept = $_POST['dept'];
-  $returnf = $_POST['returnf'];
-  $seat_capacity = $_POST['seat_capacity'];
-  $Economy_Fares = $_POST['Economy_Fares'];
-  $Business_Fares = $_POST['Business_Fares'];
-  $sql = "INSERT INTO flight_booking (fname, fno, froml,tol,dept,returnf,seat_capacity,Economy_Fares,Business_Fares) 
-	 VALUES ('$fname', '$fno', '$froml','$tol','$dept','$returnf',$seat_capacity,$Economy_Fares,$Business_Fares)";
-  if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully !<br><br>";
-    $result = mysqli_query($conn, "select * from flight_booking order by id desc limit 1 ");
-    while ($row = mysqli_fetch_array($result)) {
-      echo "<br><b>Flight Name:</b>&nbsp;&nbsp;" . $row['fname'] .
-        "<br><b>Flight No :</b>&nbsp;&nbsp;" . $row['fno'] . "<br><b>From Location:</b>&nbsp;&nbsp;"
-        . $row['froml'] . "<br><b>To Location:</b>&nbsp;&nbsp;" . $row['tol']
-        . "<br><b>Dept time:</b>&nbsp;&nbsp;" . $row['dept'] . "<b><br>Return time:</b>&nbsp;&nbsp"
-        . $row['returnf'] . "<b><br>seat Capacity:</b>" . $row['seat_capacity']
-        . " <b><br>Economy_Fares:</b>" . $row['Economy_Fares'] .
-        "<b><br>Business_Fares:</b>" . $row['Business_Fares'];
-      echo "<br />";
-    }
-  } else {
-    echo "Error: " . $sql . "
-" . mysqli_error($conn);
+ ?>
+ <h3>customer Report</h3>
+ <?php
+  $sql = "SELECT * FROM 
+  `booking`  WHERE  fname='$fname' AND fno='$fno' ";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    ?><table>
+                        <tr>
+                            
+                            <?php
+                            echo "<br><td><b></b>Name:&nbsp;&nbsp;&nbsp;</td>";
+
+                            echo "<td><b></b>Email:&nbsp;&nbsp;&nbsp;</td>";
+
+                            echo "<td><b></b>&nbsp;&nbsp;Age:&nbsp;&nbsp;&nbsp;</td>";
+
+                            echo "<td><b>From Location:</b>&nbsp;&nbsp;&nbsp;</td>";
+
+                            echo "<td><b>to Location</b>&nbsp;&nbsp;&nbsp;</td>";
+                           
+                            ?>
+                        </tr>
+                        <tr>
+                            <?php
+                            echo "<td>";
+                            echo $row["name"];
+                            echo "</td><td>";
+                            echo $row["email"];
+                            echo "</td><td>&nbsp;&nbsp;";
+                            echo $row["Age"];
+                            echo "</td><td>";
+                            echo $row["froml"];
+                            echo "</td><td>";
+                            echo $row["tol"];
+                            echo "</td>";
   }
-  mysqli_close($conn);
 }
+}
+?>
+
+      

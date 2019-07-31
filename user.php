@@ -1,4 +1,8 @@
+<?php
+
+?>
 <!DOCTYPE html>
+
 <title>User</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,12 +16,12 @@
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
         href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="Airline1.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-      <a href="flight.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Flight
+      <a href="Airline1.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      <a href="flight_show.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Flight
         Booking</i></a>&nbsp;&nbsp;&nbsp;
       <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Ticket Cancellation</i></a>&nbsp;&nbsp;
-      <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Search Flight</i></a>&nbsp;&nbsp;
-      <a href="MYBook.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">My Booking</a>
+      <a href="flight.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Search Flight</i></a>&nbsp;&nbsp;
+      <a href="MyAccount.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">My Account</a>
       <a href="" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</i></a><br>
       <br<br>
     </div>
@@ -26,8 +30,8 @@
       <a href="flight.html" class="w3-bar-item w3-button">Flight Booking</a>
       <a href="#work" class="w3-bar-item w3-button">Ticket Cancellation</a>
       <a href="flight.html" class="w3-bar-item w3-button">Search Flight</a>
-      <a href="#contact" class="w3-bar-item w3-button">My Booking</a>
-      <a href="#" class="w3-bar-item w3-button">Logout</a>
+      <a href="profile.php" class="w3-bar-item w3-button">My Booking</a>
+      <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
     </div>
   </div>
   <br>

@@ -10,17 +10,19 @@
  
  $username = $_POST["username"];
  
- $sql = "SELECT id FROM login1 WHERE username='$username'";
+ $sql = "SELECT id FROM admin_registration WHERE username='$username'";
  $result = $conn->query($sql);
  
  if ($result->num_rows > 0) {
      while ($row = $result->fetch_assoc()) {
-         $_SESSION["id"] = $row["id"];  //Session variable id set, to be used across all pages
-         header("location:profile.php"); 
+         $_SESSION["id"] = $row["id"]; 
+         //Session variable id set, to be used across all pages
+         header("location:home.html"); 
      }
- } else {
-     echo "Unregistered.";
- }
+ } else {?>
+    <script>alert('Unregistered')</script>
+   <?php
+  }
 
 
 

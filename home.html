@@ -25,7 +25,7 @@
         <div class="w3-bar w3-theme-d2 w3-left-align">
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
                 href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-            <a href="Airline1.php" class="w3-bar-item w3-button w3-teal"><i
+            <a href="Airline1\Airline1.php" class="w3-bar-item w3-button w3-teal"><i
                     class="fa fa-home w3-margin-right"></i>Home</a>
             <a href="AddAdmin.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Add Admin</a>
             <div class="w3-dropdown-hover w3-hide-small">
@@ -40,7 +40,7 @@
                 <button class="w3-button" title="Notifications">Report<i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                     <a href="flightre.php" class="w3-bar-item w3-button">Airline Report</a>
-                    <a href=".html" class="w3-bar-item w3-button">Customer Report </a>
+                    <a href="customer report.php" class="w3-bar-item w3-button">Customer Report </a>
 
                 </div>
             </div>
@@ -49,10 +49,10 @@
         </div>
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#team" class="w3-bar-item w3-button">Home</a>
-            <a href="#w" class="w3-bar-item w3-button">Add Admin</a>
-            <a href="About.html" class="w3-bar-item w3-button">Add Flight</a>
-            <a href=".html" class="w3-bar-item w3-button">Delete Flight</a>
+            <a href="home.html" class="w3-bar-item w3-button">Home</a>
+            <a href="admin.html" class="w3-bar-item w3-button">Add Admin</a>
+            <a href="home.html" class="w3-bar-item w3-button">Add Flight</a>
+            <a href="flightre.php" class="w3-bar-item w3-button">Delete Flight</a>
         </div>
     </div>
 
@@ -66,75 +66,47 @@
                 
             <label for="From" class="la1"><b>Flight Name</b></label>
             <input type="text" placeholder="Enter Flight Name" name="fname" class="la1" required> <br>
-            <label for="psw" class="la1"><b>Flight No &nbsp;</b> </label>
-            <input type="text" placeholder="  Enter Flight No" name="fno" class="la1" required><br>
+            <label for="psw" class="la1"><b>Flight No </b> </label>
+            <input type="text" placeholder="  Enter Flight No" name="fno" class="la1" required style="margin-left:19%"><br>
             <label for="From" class="la1"><b>From City</b></label>
-            <input type="text" placeholder="Enter City Name" name="froml" class="la1" required><br>
-            <label for="psw" class="la1"><b>To City&nbsp;&nbsp;&nbsp;</b></label> 
-            <input type="text" placeholder="  Enter City No" name="tol" class="la1" required><br><br>
-            <label for="psw" class="la1" ><b >Dept Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" placeholder="Enter City Name" name="froml" class="la1" required style="margin-left:18%"><br>
+            <label for="psw" class="la1"><b>To City</b></label> 
+            <input type="text" placeholder="  Enter City No" name="tol" class="la1" required style="margin-left:22%"><br><br>
+            <label for="psw" class="la1" ><b >Dept Time</b></label>
 
-            <input id="start" name="dept" />
+            <input type=" " id="datetimepicker" name="dept" style="width:38%;margin-left:17%" />
+            <script>
+                $(document).ready(function () {
+                    // create DateTimePicker from input HTML element
+                    $("#datetimepicker").kendoDateTimePicker({
+                        value: new Date(),
+                        dateInput: true
+                    });
+                });
+            </script>
             <br><br>
-            <label for="psw" class="la1" ><b>Return Time</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="psw" class="la1" ><b>Arrival Time</b></label>
 
-            <input id="end"  name="returnf"/>
+            <input type="" id="datetimepicker1"  name="returnf" style="width:38%;margin-left:14%"/>
 
             <script>
                 $(document).ready(function () {
-                    function startChange() {
-                        var startDate = start.value(),
-                            endDate = end.value();
-
-                        if (startDate) {
-                            startDate = new Date(startDate);
-                            startDate.setDate(startDate.getDate());
-                            end.min(startDate);
-                        } else if (endDate) {
-                            start.max(new Date(endDate));
-                        } else {
-                            endDate = new Date();
-                            start.max(endDate);
-                            end.min(endDate);
-                        }
-                    }
-
-                    function endChange() {
-                        var endDate = end.value(),
-                            startDate = start.value();
-
-                        if (endDate) {
-                            endDate = new Date(endDate);
-                            endDate.setDate(endDate.getDate());
-                            start.max(endDate);
-                        } else if (startDate) {
-                            end.min(new Date(startDate));
-                        } else {
-                            endDate = new Date();
-                            start.max(endDate);
-                            end.min(endDate);
-                        }
-                    }
-
-                    var today = kendo.date.today();
-
-                    var start = $("#start").kendoDateTimePicker({
-                        value: today,
-                        change: startChange,
-                        parseFormats: ["dd/MM/yyyy"]
-                    }).data("kendoDateTimePicker");
-
-                    var end = $("#end").kendoDateTimePicker({
-                        value: today,
-                        change: endChange,
-                        parseFormats: ["dd/MM/yyyy"]
-                    }).data("kendoDateTimePicker");
-
-                    start.max(end.value());
-                    end.min(start.value());
+                    // create DateTimePicker from input HTML element
+                    $("#datetimepicker1").kendoDateTimePicker({
+                        value: new Date(),
+                        dateInput: true
+                    });
                 });
             </script>
-
+<br><br>
+   <label for="psw" class="la1"><b>seat_capacity</b></label> 
+   <input type="text" placeholder="Enter seat capacity" name="seat_capacity" class="la1" required style="margin-left:12%"><br>
+   
+   <label for="psw" class="la1"><b>Economy_Fares</b></label> 
+   <input type="text" placeholder="Enter Economy_Fares" name="Economy_Fares" class="la1" required style="margin-left:10%"><br>
+   
+   <label for="psw" class="la1"><b>Business_Fares</b></label> 
+   <input type="text" placeholder="Enter Business_Fares" name="Business_Fares" class="la1" required style="margin-left:10%"><br>
             </div>
 
 

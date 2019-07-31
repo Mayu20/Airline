@@ -1,7 +1,5 @@
 <?php
-include('config.php');
-if(!empty($_POST["logout"])) {
-	$_SESSION["user_id"] = "";
-	session_destroy();
-}
+session_start();
+if(session_destroy())
+header("location:Login.php");
 ?>

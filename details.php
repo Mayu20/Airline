@@ -9,26 +9,11 @@ $conn = mysqli_connect($servername, $username, $password, "$dbname");
 if (!$conn) {
     die('Could not Connect My Sql:' . mysql_error());
 }
-if (isset($_POST['submit'])) {
+if (isset($_POST['next'])) {
 
+    
 
-    $name = $_POST['name'];
-    $contact = $_POST['contact'];
-    $email = $_POST['email'];
-    $Age = $_POST['Age'];
-    $address = $_POST['address'];
-   
-    $sql = "INSERT INTO passenger_detail (name, contact,email,Age,address) 
-     VALUES ('$name', '$contact', '$email','$Age','$address')";
- $_SESSION['name'] = $_POST['name'];
- $_SESSION['contact'] = $_POST['contact'];
- $_SESSION['email'] = $_POST['email'];
- $_SESSION['Age'] = $_POST['Age'];
- $_SESSION['address'] = $_POST['address'];
-    if (mysqli_query($conn, $sql)) {
-
-        echo "New record created successfully !";
-        //header ('Location:fl.php');
+    
 
         ?>
         <br> <br> <br>
@@ -83,21 +68,22 @@ if (isset($_POST['submit'])) {
                 <td> Email </td>
                 <td> Age </td>
                 <td> address</td>
+                <td>seat no</td>
 
             </tr>
             <tr>
             <?php
-
+    $_SESSION['counter']=$_POST['counter'];
 
             // $row = mysqli_fetch($sql) ;
-            $result = mysqli_query($conn, "select * from passenger_detail order by pid desc limit 1 ");
-    while ($row = mysqli_fetch_array($result)) {
-      echo "<td>&nbsp;&nbsp;" . $row['name'] .
-        "</td><td>&nbsp;&nbsp;" . $row['contact'] . "</td><td>&nbsp;&nbsp;"
-        . $row['email'] . "</td><td>&nbsp;&nbsp;" . $row['Age']
-        . "</td><td>&nbsp;&nbsp;" . $row['address'];
+          //  $result = mysqli_query($conn, "select * from passenger_detail order by pid desc limit 1 ");
+  //  while ($row = mysqli_fetch_array($result)) {
+      echo "<td>&nbsp;&nbsp;" . $_SESSION['name'] .
+        "</td><td>&nbsp;&nbsp;" . $_SESSION['contact'] . "</td><td>&nbsp;&nbsp;"
+        . $_SESSION['email'] . "</td><td>&nbsp;&nbsp;" . $_SESSION['Age']
+        . "</td><td>&nbsp;&nbsp;" . $_SESSION['address'] . "</td><td>&nbsp;&nbsp;" . $_SESSION['counter'] ;
       echo "</td><br />";
-    }
+    
   ?>
             </tr>
                    <br><br><br>  
@@ -107,13 +93,15 @@ if (isset($_POST['submit'])) {
 
             ?>
         </table>
-        <input type="button" value=select name="select"  onclick="window.location.href = 'index.php'"></button>
-        <input type="submit" value="confirm"  name ="confirm"></button> <?php
-            } else {
-                echo "Error: " . $sql . "
-" . mysqli_error($conn);
-            }
+        <form action="book.php" method="post">
+      
+        <input type="submit" value="confirm"  name ="confirm"  onclick="window.location.href = ''"></button> 
+           </form>
 
-
+<?php
             mysqli_close($conn);
-        }
+        
+  }
+  else {
+      echo "error";
+  }

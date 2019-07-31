@@ -12,7 +12,7 @@ $conn = mysqli_connect($url, $username, $password, "airline1");
 if (!$conn) {
     die('Could not Connect My Sql:' . mysql_error());
 }
-$result = mysqli_query($conn, "SELECT * FROM flight_booking");
+$result = mysqli_query($conn, "SELECT * FROM booking");
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,10 +38,7 @@ $result = mysqli_query($conn, "SELECT * FROM flight_booking");
 
 <script src="https://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
 <script src="https://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
-<!--disable-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
 
 <body background="images\As.png">
     <div class="w3-topnav">
@@ -79,62 +76,14 @@ $result = mysqli_query($conn, "SELECT * FROM flight_booking");
     </div>
     <br>
     <h3>Flight Reports</h3>
-    <?php
-    if (mysqli_num_rows($result) > 0) {
-        ?>
-        <br><br><br>
-        <table width="400" border="2" cellpadding="2" cellspacing='1' id="test_table">
-            <tr bgcolor="#2ECCFA">
-
-                <td>Flight Name</td>
-                <td>Flight No</td>
-                <td>From City</td>
-                <td>To City</td>
-                <td>Dept Date</td>
-                <td>Return Date</td>
-                <td>Action</td>
-
-            </tr>
-            <?php
-            $i = 0;
-            while ($row = mysqli_fetch_array($result)) {
-                ?>
-
-                <tr>
-
-
-                    <td id="name"><?php echo $row["fname"] ?></td>
-                    <td id="name"><?php echo $row["fno"] ?></td>
-                    <td id="name"><?php echo $row["froml"] ?></td>
-                    <td id="name"><?php echo $row["tol"] ?></td>
-                    <td id="name"><?php echo $row["dept"] ?></td>
-                    <td id="name"><?php echo $row["returnf"] ?></td>
-
-                    <td><a href="edit.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure to edit?')"><b style="color:black">Edit</b></a>
-
-                        &nbsp;| <button id="btn">Disable the input</button>
-
-
-                </tr>
-
-              
-
-                <?php
-                $i++;
-            }
-            ?>
-        </table>
-
-
-
-    <?php
-    } else {
-        echo "No result found";
-    }
-    ?>
-    <?php
-    $conn->close();
-    ?>
+    
+   <form action="customer.php" method="post">
+       <label for="" >Enter Flight Name</label>
+       <input type="text" name="fname">
+       <label for="Flight No">Enter Flight No</label>
+       <input type="text" name="fno"><br><br><br>
+       <cemter>
+       <input type="submit" name ="report" value="See Customer Report"></button></cemter>
+</form>
 </body>
-
 </html>
